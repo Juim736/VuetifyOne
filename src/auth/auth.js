@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function login(credentials) {
     return new Promise((res,rej) => {
-        axios.post('http://192.168.0.103:8001/api/auth/login',credentials)
+        axios.post('http://192.168.152.89:8001/api/auth/login',credentials)
         .then((response) => {
             res(response.data)
         })
@@ -14,7 +14,7 @@ export function login(credentials) {
 
 export function registration(registerData) {
     return new Promise((res,rej) => {
-        axios.post('http://192.168.0.103:8001/api/auth/registration',registerData)
+        axios.post('http://192.168.152.89:8001/api/auth/registration',registerData)
         .then((response) => {
             res(response)
         })
