@@ -35,6 +35,16 @@
               </v-menu>
           </v-toolbar>
           <v-navigation-drawer app v-model="drawer" class="light-blue darken-3">
+              <v-layout column align-center>
+                  <v-flex class="mt-5">
+                    <v-avatar size="100"> 
+                      <img src="images/jim.jpg" alt="kggkjs">
+                    </v-avatar>
+                    <p class="white--text subheading mt-1">
+                      My Profile
+                    </p>
+                  </v-flex>
+                </v-layout>
                   <v-list>
                           <v-list-tile
                             v-for="item in navitems"

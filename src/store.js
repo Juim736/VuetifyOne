@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { getLocalUser } from '@/auth/auth.js'
+import Axios from 'axios';
 const user = getLocalUser();
 
 Vue.use(Vuex)
@@ -67,6 +68,17 @@ export default new Vuex.Store({
     },
     registration(context) {
       context.commit("registration")
+    },
+    teams(context) {
+      Axios.get(`http://192.168.0.103:8001/api/team/teams`,{
+        headers : {
+          'Authorization' : `Bearer ${context.state.currentUser.token}`
+        }
+      })
+      .then((response) => {
+        console.log(response);
+        // context.commit("updateTeam", response.data.teams)
+      })
     }
   }
 })
